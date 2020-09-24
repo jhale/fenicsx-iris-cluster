@@ -7,6 +7,4 @@ source env-build-fenics.sh
 ./build-petsc.sh
 ./build-pybind11.sh
 ./build-python-modules.sh
-./build-fenics.sh
-
-cp 
+./build-fenics.sh 

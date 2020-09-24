@@ -1,5 +1,5 @@
 # fenicsx-iris-cluster #
-### Scripts to build FEniCSX on the University of Luxembourg gaia and iris clusters ###
+### Scripts to build FEniCSX on the University of Luxembourg iris cluster ###
 
 These scripts will automatically build the latest development version of
 [FEniCSX](http://fenicsproject.org) with PETSc and HDF5 support on the
@@ -32,8 +32,8 @@ $$ ./build-all.sh | tee build.log
 Wait for the build to finish. The output of the build will be stored in
 build.log as well as outputted to the screen.
 
-When you want to run FEniCS you must reserve resources on the cluster and then
-setup your environment using:
+When you want to run FEniCS you must reserve resources on the cluster using
+``srun`` and then setup your environment using:
 ```
 #!shell
 $$ source env-fenics.sh
