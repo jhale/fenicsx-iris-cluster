@@ -62,12 +62,12 @@ $ sbatch -n 4 fenics-launcher.sh python3 poisson.py
 ## Experimental: LLNL Spindle Support
 
 For large parallel jobs the time taken to load the shared object files from the
-cluster can dominate the overall runtime. The Spindle tool can help with this.
+cluster can dominate the overall runtime. By default we install the [Spindle
+tool](https://github.com/hpc/Spindle/) which seems to effectively deal with
+this issue on iris.
 
-```
-$$ cd $HOME/fenicsx-iris-cluster
-$$ ./build-spindle.sh
-```
+If you have issues then please remove the `spindle` prefix to `srun` in the
+`fenicsx-launcher.sh` script.
 
 ## Known issues
 
