@@ -10,4 +10,4 @@ cd ${BUILD_DIR} && \
    tar -xf boost.tar.gz -C ${BUILD_DIR}/boost --strip-components=1 && \
    cd boost && \
    ./bootstrap.sh --prefix=$PREFIX
-   ./b2 --with-timer --with-filesystem --with-program_options cxxflags="-fPIC -std=c++11" toolset="gcc" install
+   ./b2 --with-timer --with-filesystem --with-program_options cxxflags="-fPIC -std=c++11" toolset="gcc-8.2.0" install

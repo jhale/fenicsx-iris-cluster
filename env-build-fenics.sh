@@ -25,8 +25,8 @@ export MPICC=mpigcc
 export MPICXX=mpigxx
 export MPIFC=mpif90
 
-TAG=master-r1
-PREFIX=${HOME}/fenicsx-${TAG}
+TAG=master-r3
+PREFIX=${SCRATCH}/fenicsx-${TAG}
 WORKON_HOME=${PREFIX}/virtualenv
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
 BUILD_THREADS=1

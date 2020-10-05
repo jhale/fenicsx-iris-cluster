@@ -24,7 +24,6 @@ $ ./builder.sh
 
 Run the following commands:
 ```
-#!shell
 $$ cd $HOME
 $$ cd fenicsx-iris-cluster
 $$ ./build-all.sh | tee build.log
@@ -35,14 +34,12 @@ build.log as well as outputted to the screen.
 When you want to run FEniCS you must reserve resources on the cluster using
 ``srun`` and then setup your environment using:
 ```
-#!shell
 $$ source env-fenics.sh
 ```
 before running any scripts.
 
 FEniCS jobs can be run in interactive mode using:
 ```
-#!shell
 $$ srun --mpi=pmi2 python3 my_fenics_script.py
 ```
 
@@ -57,10 +54,19 @@ Included in this repository is a very simple example launcher script to submit
 jobs on the cluster.
 
 ```
-#!shell
 $ cd $HOME
 $ cd fenicsx-iris-cluster
-$ sbatch fenics-launcher.sh python3 poisson.py
+$ sbatch -n 4 fenics-launcher.sh python3 poisson.py
+```
+
+## Experimental: LLNL Spindle Support
+
+For large parallel jobs the time taken to load the shared object files from the
+cluster can dominate the overall runtime. The Spindle tool can help with this.
+
+```
+$$ cd $HOME/fenicsx-iris-cluster
+$$ ./build-spindle.sh
 ```
 
 ## Known issues
