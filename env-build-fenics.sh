@@ -17,6 +17,8 @@ module load lang/Python/3.7.2-GCCcore-8.2.0
 module load data/HDF5/1.10.5-iimpi-2019a
 module load numlib/imkl/2019.1.144-iimpi-2019a
 module load math/Eigen/3.3.7
+# Required by gmsh binaries
+module load vis/libGLU/9.0.0-GCCcore-8.2.0
 
 export CC=gcc
 export CXX=g++
