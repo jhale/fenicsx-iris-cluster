@@ -16,7 +16,7 @@ cd ${BUILD_DIR} && \
                --COPTFLAGS="-march=native -O2" \
                --CXXOPTFLAGS="-march=native -O2" \
                --FOPTFLAGS="-march=native -O2" \
-               --with-cc=mpigcc --with-cxx=mpigxx --with-fc=mpif90 \
+               --with-cc=mpiicc --with-cxx=mpiicpc --with-fc=mpiifort \
                --with-mpiexec="srun -n 1 --mpi=pmi2" \
                --download-metis \
                --download-ptscotch \

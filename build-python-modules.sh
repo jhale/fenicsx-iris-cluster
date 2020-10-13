@@ -16,4 +16,4 @@ python3 -m pip install --no-cache-dir mpi4py numba
 python3 -m pip install --no-cache-dir petsc4py==${PETSC4PY_VERSION}
 python3 -m pip install --no-cache-dir cffi
 python3 -m pip install --no-cache-dir gmsh-dev
-export HDF5_MPI="ON" && export CC=mpicc && python3 -m pip install --no-cache-dir --no-binary=h5py h5py meshio
+export HDF5_MPI="ON" && python3 -m pip install --no-cache-dir --no-binary=h5py h5py meshio

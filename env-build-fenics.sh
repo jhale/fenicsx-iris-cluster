@@ -20,14 +20,24 @@ module load math/Eigen/3.3.7
 # Required by gmsh binaries
 module load vis/libGLU/9.0.0-GCCcore-8.2.0
 
+# Note that some components (e.g. Boost) are always built with GCC.
+# Using GCC
 export CC=gcc
 export CXX=g++
 export FC=gfortran
 export MPICC=mpigcc
-export MPICXX=mpigxx
+export MPICXX=mpig++
 export MPIFC=mpif90
 
-TAG=master-r3
+# Using Intel Compilers
+#export CC=icc
+#export CXX=icpc
+#export FC=ifort
+#export MPICC=mpiicc
+#export MPICXX=mpiicpc
+#export MPIFC=mpiifort
+
+TAG=master-r4
 PREFIX=${SCRATCH}/fenicsx-${TAG}
 WORKON_HOME=${PREFIX}/virtualenv
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
