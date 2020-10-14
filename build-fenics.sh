@@ -19,7 +19,8 @@ cd $BUILD_DIR && \
    cd dolfinx && \
    mkdir build && \
    cd build && \
-   cmake -DDOLFINX_SKIP_BUILD_TESTS=True -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_BUILD_TYPE="Release" ../cpp && \
+   cmake -DDOLFINX_SKIP_BUILD_TESTS=True -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+     -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="-O2 -march=native" ../cpp && \
    make install && \
    cd ../python && \
    python3 -m pip install --ignore-installed --no-dependencies .

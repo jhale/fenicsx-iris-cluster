@@ -20,8 +20,7 @@ module load math/Eigen/3.3.7
 # Required by gmsh binaries
 module load vis/libGLU/9.0.0-GCCcore-8.2.0
 
-# Note that some components (e.g. Boost) are always built with GCC.
-# Using GCC
+# Using GCC, except for PETSc (Intel compilers).
 export CC=gcc
 export CXX=g++
 export FC=gfortran
@@ -29,7 +28,8 @@ export MPICC=mpigcc
 export MPICXX=mpig++
 export MPIFC=mpif90
 
-# Using Intel Compilers
+# Using Intel Compilers (doesn't work at the moment).
+# Note that some components (e.g. Boost) are always built with GCC.
 #export CC=icc
 #export CXX=icpc
 #export FC=ifort
@@ -37,7 +37,7 @@ export MPIFC=mpif90
 #export MPICXX=mpiicpc
 #export MPIFC=mpiifort
 
-TAG=master-r4
+TAG=master-r5
 PREFIX=${SCRATCH}/fenicsx-${TAG}
 WORKON_HOME=${PREFIX}/virtualenv
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
