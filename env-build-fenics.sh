@@ -25,7 +25,7 @@ export CC=gcc
 export CXX=g++
 export FC=gfortran
 export MPICC=mpigcc
-export MPICXX=mpig++
+export MPICXX=mpigxx
 export MPIFC=mpif90
 
 # Using Intel Compilers (doesn't work at the moment).
