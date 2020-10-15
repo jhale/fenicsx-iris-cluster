@@ -4,7 +4,7 @@ source env-build-fenics.sh
 export PETSC_DIR=${PREFIX}
 export SLEPC_DIR=${PREFIX}
 
-PETSC4PY_VERSION=3.13.0
+PETSC4PY_VERSION=3.14.0
 
 python3 -m pip install --user virtualenv virtualenvwrapper
 

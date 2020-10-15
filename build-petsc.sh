@@ -2,7 +2,7 @@
 set -e
 source env-build-fenics.sh
 
-VERSION="3.13.3"
+VERSION="3.14.0"
 
 mkdir -p $BUILD_DIR
 
@@ -16,7 +16,7 @@ cd ${BUILD_DIR} && \
                --COPTFLAGS="-march=native -O2" \
                --CXXOPTFLAGS="-march=native -O2" \
                --FOPTFLAGS="-march=native -O2" \
-               --with-cc=mpiicc --with-cxx=mpiicpc --with-fc=mpiifort \
+               --with-cc=${MPICC} --with-cxx=${MPICXX} --with-fc=${MPIFC} \
                --with-mpiexec="srun -n 1 --mpi=pmi2" \
                --download-metis \
                --download-ptscotch \
