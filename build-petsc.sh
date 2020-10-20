@@ -13,9 +13,9 @@ cd ${BUILD_DIR} && \
    cd petsc && \
    python3 ./configure \
                --with-blaslapack-dir=${EBROOTIMKL}/mkl \
-               --COPTFLAGS="-march=native -O2" \
-               --CXXOPTFLAGS="-march=native -O2" \
-               --FOPTFLAGS="-march=native -O2" \
+               --COPTFLAGS="-march=broadwell -O2" \
+               --CXXOPTFLAGS="-march=broadwell -O2" \
+               --FOPTFLAGS="-march=broadwell -O2" \
                --with-cc=${MPICC} --with-cxx=${MPICXX} --with-fc=${MPIFC} \
                --with-mpiexec="srun -n 1 --mpi=pmi2" \
                --download-metis \
