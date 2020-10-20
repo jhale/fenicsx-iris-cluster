@@ -28,6 +28,7 @@ cd ${BUILD_DIR} && \
                --download-superlu \
                --download-superlu_dist \
                --with-scalar-type=real \
+               --with-memalign=32 \
                --with-debugging=0 \
                --with-shared-libraries \
                --with-fortran-bindings=no \

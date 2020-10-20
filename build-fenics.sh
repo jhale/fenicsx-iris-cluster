@@ -20,7 +20,7 @@ cd $BUILD_DIR && \
    mkdir build && \
    cd build && \
    cmake -DDOLFINX_SKIP_BUILD_TESTS=True -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-     -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="-O2 -march=broadwell" ../cpp && \
+     -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="-O2 -march=broadwell" -DDOLFINX_EIGEN_MAX_ALIGN_BYTES="32" ../cpp && \
    make install && \
    cd ../python && \
    python3 -m pip install --ignore-installed --no-dependencies .
