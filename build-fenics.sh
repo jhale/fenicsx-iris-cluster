@@ -20,7 +20,7 @@ cd $BUILD_DIR && \
    mkdir build && \
    cd build && \
    cmake -DDOLFINX_SKIP_BUILD_TESTS=True -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-     -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE=${FENICSX_OPTFLAGS} ../cpp && \
+     -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FENICSX_OPTFLAGS}" ../cpp && \
    make install && \
    cd ../python && \
-   CXXFLAGS=${FENICSX_OPTFLAGS} python3 -m pip install --ignore-installed --no-dependencies .
+   CXXFLAGS="${FENICSX_OPTFLAGS}" python3 -m pip install --ignore-installed --no-dependencies .
