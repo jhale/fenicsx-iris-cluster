@@ -48,6 +48,10 @@ $$ srun --mpi=pmi2 python3 my_fenics_script.py
 You can adjust the build location and the installation location in the file
 `env-build-fenics.sh`.
 
+Default compiler optimisation flags are `-O3 -march=haswell`. If you would like to
+target AVX-512 nodes please change `FENICSX_OPTFLAGS` environmental variable in `env-build-fenics.sh`
+and the content of `dolfinx_jit_parameters.json` in `env-fenics.sh` accordingly.
+
 ## Running FEniCS MPI jobs ##
 
 Included in this repository is a very simple example launcher script to submit
@@ -56,7 +60,7 @@ jobs on the cluster.
 ```
 $ cd $HOME
 $ cd fenicsx-iris-cluster
-$ sbatch -n 4 fenics-launcher.sh python3 poisson.py
+$ sbatch -n 4 fenicsx-launcher.sh python3 poisson.py
 ```
 
 ## Experimental: LLNL Spindle Support
