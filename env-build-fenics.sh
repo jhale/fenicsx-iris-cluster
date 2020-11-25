@@ -28,7 +28,7 @@ export MPICC=mpigcc
 export MPICXX=mpigxx
 export MPIFC=mpif90
 
-export FENICSX_OPTFLAGS="-O3 -march=haswell"
+export FENICSX_OPTFLAGS="-O3 -march=broadwell"
 
 # Using Intel Compilers (doesn't work at the moment).
 # Note that some components (e.g. Boost) are always built with GCC.
