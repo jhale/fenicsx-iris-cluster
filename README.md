@@ -48,9 +48,10 @@ $$ srun --mpi=pmi2 python3 my_fenics_script.py
 You can adjust the build location and the installation location in the file
 `env-build-fenics.sh`.
 
-Default compiler optimisation flags are `-O3 -march=haswell`. If you would like to
-target AVX-512 nodes please change `FENICSX_OPTFLAGS` environmental variable in `env-build-fenics.sh`
-and the content of `dolfinx_jit_parameters.json` in `env-fenics.sh` accordingly.
+Default compiler optimisation flags are `-O3 -march=native`. The actual microarchitecture
+targeted during compilation will depend on the node you get allocated using `builder.sh`,
+which asks for Haswell nodes by default. If you know you will be using FEniCS only on Skylake machines,
+please change `builder.sh`.
 
 ## Running FEniCS MPI jobs ##
 
