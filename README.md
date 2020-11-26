@@ -50,7 +50,7 @@ You can adjust the build location and the installation location in the file
 
 Default compiler optimisation flags are `-O3 -march=native`. The actual microarchitecture
 targeted during compilation will depend on the node you get allocated using `builder.sh`,
-which asks for Haswell nodes by default. If you know you will be using FEniCS only on Skylake machines,
+which asks for Broadwell nodes by default. If you know you will be using FEniCS only on Skylake machines,
 please change `builder.sh`.
 
 ## Running FEniCS MPI jobs ##
