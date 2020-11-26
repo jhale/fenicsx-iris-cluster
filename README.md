@@ -48,6 +48,11 @@ $$ srun --mpi=pmi2 python3 my_fenics_script.py
 You can adjust the build location and the installation location in the file
 `env-build-fenics.sh`.
 
+Default compiler optimisation flags are `-O3 -march=native`. The actual microarchitecture
+targeted during compilation will depend on the node you get allocated using `builder.sh`,
+which asks for Broadwell nodes by default. If you know you will be using FEniCS only on Skylake machines,
+please change `builder.sh`.
+
 ## Running FEniCS MPI jobs ##
 
 Included in this repository is a very simple example launcher script to submit
@@ -56,7 +61,7 @@ jobs on the cluster.
 ```
 $ cd $HOME
 $ cd fenicsx-iris-cluster
-$ sbatch -n 4 fenics-launcher.sh python3 poisson.py
+$ sbatch -n 4 fenicsx-launcher.sh python3 poisson.py
 ```
 
 ## Experimental: LLNL Spindle Support
