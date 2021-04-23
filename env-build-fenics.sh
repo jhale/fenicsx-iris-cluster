@@ -26,7 +26,7 @@ export MPIFC=mpif90
 
 export FLAGS="-O2 -march=broadwell"
 
-TAG=master-r10
+TAG=master-r11
 PREFIX=${HOME}/fenicsx-${TAG}
 WORKON_HOME=${PREFIX}/virtualenv
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}

@@ -12,9 +12,9 @@ cd ${BUILD_DIR} && \
    cd petsc && \
    python3 ./configure \
                --with-blaslapack-dir=${EBROOTIMKL}/mkl \
-               --COPTFLAGS=${FLAGS} \
-               --CXXOPTFLAGS=${FLAGS} \
-               --FOPTFLAGS=${FLAGS} \
+               --COPTFLAGS="${FLAGS}" \
+               --CXXOPTFLAGS="${FLAGS}" \
+               --FOPTFLAGS="${FLAGS}" \
                --with-cc=${MPICC} --with-cxx=${MPICXX} --with-fc=${MPIFC} \
                --with-make-np=8 \
                --with-mpiexec="srun" \
