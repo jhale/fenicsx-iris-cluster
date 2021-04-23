@@ -1,8 +1,7 @@
 #!/bin/bash
-set -e
 source env-build-fenics.sh
 
-VERSION="3.14.0"
+VERSION="3.15.0"
 
 mkdir -p $BUILD_DIR
 
@@ -13,11 +12,12 @@ cd ${BUILD_DIR} && \
    cd petsc && \
    python3 ./configure \
                --with-blaslapack-dir=${EBROOTIMKL}/mkl \
-               --COPTFLAGS="-march=native -O2" \
-               --CXXOPTFLAGS="-march=native -O2" \
-               --FOPTFLAGS="-march=native -O2" \
+               --COPTFLAGS=${FLAGS} \
+               --CXXOPTFLAGS=${FLAGS} \
+               --FOPTFLAGS=${FLAGS} \
                --with-cc=${MPICC} --with-cxx=${MPICXX} --with-fc=${MPIFC} \
-               --with-mpiexec="srun -n 1 --mpi=pmi2" \
+               --with-make-np=8 \
+               --with-mpiexec="srun" \
                --download-metis \
                --download-ptscotch \
                --download-suitesparse \

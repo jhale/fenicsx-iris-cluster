@@ -2,7 +2,7 @@
 set -e
 source env-build-fenics.sh
 
-PYBIND11_VERSION="2.5.0"
+PYBIND11_VERSION="2.6.2"
 
 mkdir -p $BUILD_DIR
 

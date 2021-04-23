@@ -9,16 +9,12 @@ fi
 module purge
 
 # Intel MPI with GCC build
-module load swenv/default-env
-module load devel/CMake/3.13.3-GCCcore-8.2.0
-module load toolchain/iimpi/2019a 
-module load lang/flex/2.6.4-GCCcore-8.2.0 
-module load lang/Python/3.7.2-GCCcore-8.2.0
-module load data/HDF5/1.10.5-iimpi-2019a
-module load numlib/imkl/2019.1.144-iimpi-2019a
-module load math/Eigen/3.3.7
-# Required by gmsh binaries
-module load vis/libGLU/9.0.0-GCCcore-8.2.0
+module load devel/CMake/3.15.3-GCCcore-8.3.0
+module load toolchain/iimpi/2019b 
+module load lang/flex/2.6.4-GCCcore-8.3.0
+module load lang/Python/3.7.4-GCCcore-8.3.0
+module load data/HDF5/1.10.5-iimpi-2019b
+module load numlib/imkl/2019.5.281-iimpi-2019b
 
 # Using GCC, except for PETSc (Intel compilers).
 export CC=gcc
@@ -28,20 +24,12 @@ export MPICC=mpigcc
 export MPICXX=mpigxx
 export MPIFC=mpif90
 
-# Using Intel Compilers (doesn't work at the moment).
-# Note that some components (e.g. Boost) are always built with GCC.
-#export CC=icc
-#export CXX=icpc
-#export FC=ifort
-#export MPICC=mpiicc
-#export MPICXX=mpiicpc
-#export MPIFC=mpiifort
+export FLAGS="-O2 -march=broadwell"
 
-TAG=master-r5
-PREFIX=${SCRATCH}/fenicsx-${TAG}
+TAG=master-r10
+PREFIX=${HOME}/fenicsx-${TAG}
 WORKON_HOME=${PREFIX}/virtualenv
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
-BUILD_THREADS=1
 
 export PATH=${PREFIX}/bin:${PATH}
 export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}

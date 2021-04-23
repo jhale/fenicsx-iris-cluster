@@ -19,30 +19,15 @@ First clone this repository.
 $ cd $HOME
 $ git clone https://
 $ cd fenicsx-iris-cluster
-$ ./builder.sh
+$ sbatch build-all.sh
 ```
-
-Run the following commands:
-```
-$$ cd $HOME
-$$ cd fenicsx-iris-cluster
-$$ ./build-all.sh | tee build.log
-```
-Wait for the build to finish. The output of the build will be stored in
-build.log as well as outputted to the screen.
-
-When you want to run FEniCS you must reserve resources on the cluster using
-``srun`` and then setup your environment using:
-```
-$$ source env-fenics.sh
-```
-before running any scripts.
 
 FEniCS jobs can be run in interactive mode using:
 ```
-$$ srun --mpi=pmi2 python3 my_fenics_script.py
+$ si
+$$ source env-fenics.sh
+$$ srun python3 script_name.py
 ```
-
 ### Advanced ###
 
 You can adjust the build location and the installation location in the file
@@ -68,8 +53,3 @@ this issue on iris.
 
 If you have issues then please remove the `spindle` prefix to `srun` in the
 `fenicsx-launcher.sh` script.
-
-## Known issues
-
-MPI jobs must be launched with `srun`, not `mpirun` or `mpiexec`. Using `mpirun`
-or `mpiexec` seems to result in random crashes.

@@ -1,2 +1,2 @@
-#!/bin/bash
-srun -p interactive --qos qos-interactive --time=02:00:00 -N 1 -n 1 --pty bash -i
+#!/bin/bash -l
+si --time=00:35:00 -N 1 -n 8 -C broadwell
