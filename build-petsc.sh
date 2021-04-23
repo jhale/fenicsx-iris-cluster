@@ -2,7 +2,12 @@
 set -e
 source env-build-fenics.sh
 
-VERSION="3.14.0"
+# Can no longer use srun within an interactive session.
+# mpiexec with unset I_MPI_PMI_LIBRARY works fine.
+# srun within an sbatch script works fine.
+unset I_MPI_PMI_LIBRARY
+
+VERSION="3.15.0"
 
 mkdir -p $BUILD_DIR
 
@@ -17,7 +22,8 @@ cd ${BUILD_DIR} && \
                --CXXOPTFLAGS="-march=broadwell -O2" \
                --FOPTFLAGS="-march=broadwell -O2" \
                --with-cc=${MPICC} --with-cxx=${MPICXX} --with-fc=${MPIFC} \
-               --with-mpiexec="srun -n 1 --mpi=pmi2" \
+               --with-make-np=8 \
+               --with-mpiexec="mpiexec" \
                --download-metis \
                --download-ptscotch \
                --download-suitesparse \
@@ -28,7 +34,6 @@ cd ${BUILD_DIR} && \
                --download-superlu \
                --download-superlu_dist \
                --with-scalar-type=real \
-               --with-memalign=32 \
                --with-debugging=0 \
                --with-shared-libraries \
                --with-fortran-bindings=no \

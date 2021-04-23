@@ -3,6 +3,7 @@ set -e
 
 source env-build-fenics.sh
 
+./build-cmake.sh
 ./build-boost.sh
 ./build-petsc.sh
 ./build-pybind11.sh

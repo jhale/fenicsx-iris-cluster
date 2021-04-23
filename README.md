@@ -40,9 +40,9 @@ before running any scripts.
 
 FEniCS jobs can be run in interactive mode using:
 ```
-$$ srun --mpi=pmi2 python3 my_fenics_script.py
+$$ unset I_MPI_PMI_LIBRARY
+$$ mpiexec python3 script_name.py
 ```
-
 ### Advanced ###
 
 You can adjust the build location and the installation location in the file
@@ -68,8 +68,3 @@ this issue on iris.
 
 If you have issues then please remove the `spindle` prefix to `srun` in the
 `fenicsx-launcher.sh` script.
-
-## Known issues
-
-MPI jobs must be launched with `srun`, not `mpirun` or `mpiexec`. Using `mpirun`
-or `mpiexec` seems to result in random crashes.

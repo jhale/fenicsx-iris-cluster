@@ -8,7 +8,7 @@ export DOLFINX_JIT_CFLAGS="-O3 -march=broadwell"
 
 # Bring in virtualenv with python package
 source $HOME/.local/bin/virtualenvwrapper.sh
-workon fenics-${TAG}
+workon fenicsx-${TAG}
 
 export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1

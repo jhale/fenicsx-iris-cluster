@@ -2,25 +2,34 @@
 source env-build-fenics.sh
 
 source $HOME/.local/bin/virtualenvwrapper.sh
-workon fenics-${TAG}
+workon fenicsx-${TAG}
 
 export PETSC_DIR=${PREFIX}
 export PYBIND11_DIR=${PREFIX}
-export EIGEN3_ROOT=${EBROOTEIGEN}/include
 export BOOST_ROOT=${PREFIX}
 
-python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/fiat.git
+mkdir -p $BUILD_DIR
+
+cd $BUILD_DIR && \
+   git clone --depth 1 https://github.com/fenics/basix.git && \
+   cd basix && \
+   cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="-O2 -march=broadwell" \
+     -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBLA_VENDOR="Intel10_64_dyn" -B build-dir -S . && \
+   cmake --build build-dir -- -j8 && \
+   cmake --install build-dir && \
+   CXXFLAGS="-O2 -march=broadwell" python3 -m pip install ./python
+
 python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ufl.git
 python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ffcx.git
 
-mkdir -p $BUILD_DIR
 cd $BUILD_DIR && \
-   git clone --depth 1 https://github.com/fenics/dolfinx.git && \
+   git clone --single-branch --branch jhale/without-std-transform-reduce https://github.com/fenics/dolfinx.git && \
    cd dolfinx && \
    mkdir build && \
    cd build && \
    cmake -DDOLFINX_SKIP_BUILD_TESTS=True -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-     -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="-O2 -march=broadwell" -DDOLFINX_EIGEN_MAX_ALIGN_BYTES="32" ../cpp && \
-   make install && \
+     -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="-O2 -march=broadwell" \
+     -DBLA_VENDOR="Intel10_64_dyn" ../cpp && \
+   make -j8 install && \
    cd ../python && \
-   python3 -m pip install --ignore-installed --no-dependencies .
+   CXXFLAGS="-O2 -march=broadwell" python3 -m pip install --ignore-installed --no-dependencies .
