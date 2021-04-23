@@ -40,8 +40,9 @@ before running any scripts.
 
 FEniCS jobs can be run in interactive mode using:
 ```
-$$ unset I_MPI_PMI_LIBRARY
-$$ mpiexec python3 script_name.py
+$ si # allocates one core.
+$$ source env-fenics.sh
+$$ srun python3 script_name.py
 ```
 ### Advanced ###
 
