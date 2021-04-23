@@ -15,7 +15,6 @@ compute node.
 
 First clone this repository.
 ```
-#!shell
 $ cd $HOME
 $ git clone https://
 $ cd fenicsx-iris-cluster
