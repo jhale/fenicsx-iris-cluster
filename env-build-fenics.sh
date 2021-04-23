@@ -24,7 +24,9 @@ export MPICC=mpigcc
 export MPICXX=mpigxx
 export MPIFC=mpif90
 
-TAG=master-r8
+export FLAGS="-O2 -march=broadwell"
+
+TAG=master-r10
 PREFIX=${HOME}/fenicsx-${TAG}
 WORKON_HOME=${PREFIX}/virtualenv
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
