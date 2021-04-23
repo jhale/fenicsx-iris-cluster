@@ -15,8 +15,6 @@ module load lang/flex/2.6.4-GCCcore-8.3.0
 module load lang/Python/3.7.4-GCCcore-8.3.0
 module load data/HDF5/1.10.5-iimpi-2019b
 module load numlib/imkl/2019.5.281-iimpi-2019b
-# Required by gmsh binaries
-module load vis/libGLU/9.0.1-GCCcore-8.3.0
 
 # Using GCC, except for PETSc (Intel compilers).
 export CC=gcc
@@ -26,11 +24,10 @@ export MPICC=mpigcc
 export MPICXX=mpigxx
 export MPIFC=mpif90
 
-TAG=master-r7
+TAG=master-r8
 PREFIX=${HOME}/fenicsx-${TAG}
 WORKON_HOME=${PREFIX}/virtualenv
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
-BUILD_THREADS=1
 
 export PATH=${PREFIX}/bin:${PATH}
 export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}

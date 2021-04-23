@@ -19,28 +19,12 @@ First clone this repository.
 $ cd $HOME
 $ git clone https://
 $ cd fenicsx-iris-cluster
-$ ./builder.sh
+$ sbatch build-all.sh
 ```
-
-Run the following commands:
-```
-$$ cd $HOME
-$$ cd fenicsx-iris-cluster
-$$ ./build-all.sh | tee build.log
-```
-Wait for the build to finish. The output of the build will be stored in
-build.log as well as outputted to the screen.
-
-When you want to run FEniCS you must reserve resources on the cluster using
-``srun`` and then setup your environment using:
-```
-$$ source env-fenics.sh
-```
-before running any scripts.
 
 FEniCS jobs can be run in interactive mode using:
 ```
-$ si # allocates one core.
+$ si
 $$ source env-fenics.sh
 $$ srun python3 script_name.py
 ```
