@@ -33,3 +33,6 @@ cd $BUILD_DIR && \
    make -j8 install && \
    cd ../python && \
    CXXFLAGS="-O2 -march=broadwell" python3 -m pip install --ignore-installed --no-dependencies .
+
+mkdir -p ~/.config/dolfinx
+echo "{ 'cache_dir': '${SCRATCH}fenicsx-jit-cache', 'cffi_extra_compile_args': '-O3 -march=broadwell' }" > ~/.config/dolfinx/dolfinx_jit_parameters.json 
