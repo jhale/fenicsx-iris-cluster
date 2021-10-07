@@ -21,10 +21,10 @@ $ cd fenicsx-iris-cluster
 $ sbatch build-all.sh
 ```
 
-FEniCS jobs can be run in interactive mode using:
+FEniCS jobs can be run in interactive mode using e.g.:
 ```
 $ si
-$$ source env-fenics.sh
+$$ source ${HOME}/fenicsx-master-r11/env-fenics.sh
 $$ srun python3 script_name.py
 ```
 ### Advanced ###
