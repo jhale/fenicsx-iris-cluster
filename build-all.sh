@@ -12,5 +12,6 @@ source env-build-fenics.sh
 ./build-python-modules.sh
 ./build-fenics.sh
 
+mkdir -p ${PREFIX}/bin
 cp env-build-fenics.sh ${PREFIX}/bin/env-build-fenics.sh
 cp env-fenics.sh ${PREFIX}/bin/env-fenics.sh
