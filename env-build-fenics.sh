@@ -1,4 +1,12 @@
 #!/bin/bash -l
+# User should set TAG and FLAGS appropriately
+TAG=aion-master-r13
+export FLAGS="-O2 -march=znver2"
+
+PREFIX=${HOME}/fenicsx-${TAG}
+WORKON_HOME=${PREFIX}/virtualenv
+BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
+
 module purge
 
 # 2019b software set Intel MPI with GCC build
@@ -30,13 +38,6 @@ export FC=gfortran
 export MPICC=mpigcc
 export MPICXX=mpigxx
 export MPIFC=mpif90
-
-export FLAGS="-O2 -march=znver2"
-
-TAG=aion-master-r13
-PREFIX=${HOME}/fenicsx-${TAG}
-WORKON_HOME=${PREFIX}/virtualenv
-BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
 
 export PATH=${PREFIX}/bin:${PATH}
 export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}
