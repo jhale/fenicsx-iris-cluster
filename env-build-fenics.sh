@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=aion-master-r13
+TAG=aion-master-r14
 export FLAGS="-O2 -march=znver2"
 
 PREFIX=${HOME}/fenicsx-${TAG}
