@@ -21,15 +21,14 @@ cd $BUILD_DIR && \
 python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ufl.git
 python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ffcx.git
 
+unset I_MPI_PMI_LIBRARY # Necessary if running in interactive session
 cd $BUILD_DIR && \
    git clone https://github.com/fenics/dolfinx.git && \
    cd dolfinx/cpp && \
-   cmake -B build-dir -S . -DDOLFINX_SKIP_BUILD_TESTS=True -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-     -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" && \
+   cmake -B build-dir -S . \
+     -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_BUILD_TYPE="Release" \
+     -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" -DMPIEXEC_EXECUTABLE=srun && \
    cmake --build build-dir -- -j8 && \
    cmake --install build-dir && \
    cd ../python && \
    CXXFLAGS="${FLAGS}" python3 -m pip install --ignore-installed --no-dependencies .
-
-mkdir -p ~/.config/dolfinx
-echo "{ 'cache_dir': '${SCRATCH}fenicsx-jit-cache', 'cffi_extra_compile_args': '${FLAGS}' }" > ~/.config/dolfinx/dolfinx_jit_parameters.json 
