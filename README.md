@@ -17,7 +17,7 @@ git clone https://github.com/jhale/fenicsx-iris-cluster.git
 cd fenicsx-iris-cluster
 ```
 
-Adjust the `TAG` and `FLAGS` in `./fenicsx-iris-cluster` appropriately and
+Adjust the `TAG` and `FLAGS` in `./fenicsx-iris-cluster/env-build-fenics.sh` appropriately and
 then build FEniCSx:
 ```
 sbatch build-all.sh
@@ -29,6 +29,10 @@ si # Start interactive session
 source ${HOME}/fenicsx-<TAG>/env-fenics.sh
 srun python3 script_name.py
 ```
+
+## Warnings ##
+
+aion and iris have different OS and architecture so be careful with the FFCx cache.
 
 ## Running FEniCS MPI jobs ##
 
