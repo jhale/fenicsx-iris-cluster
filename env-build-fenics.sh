@@ -9,6 +9,10 @@ module purge
 #module load data/HDF5/1.10.5-iimpi-2019b
 #module load numlib/imkl/2019.5.281-iimpi-2019b
 
+if [[ $(hostname) =~ "iris" ]]; then
+   resif-load-swset-devel
+fi
+
 # 2020b software set Intel MPI with GCC build
 module load devel/CMake/3.18.4-GCCcore-10.2.0
 module load toolchain/iimpi/2020b 
