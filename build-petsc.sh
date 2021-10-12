@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash -l
+set -e
 source env-build-fenics.sh
 
 VERSION="3.16.0"
@@ -6,7 +7,7 @@ VERSION="3.16.0"
 mkdir -p $BUILD_DIR
 
 cd ${BUILD_DIR} && \
-   wget --read-timeout=10 -nc http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-${VERSION}.tar.gz -O petsc.tar.gz && \
+   wget --no-check-certificate --read-timeout=10 -nc http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-${VERSION}.tar.gz -O petsc.tar.gz && \
    mkdir -p ${BUILD_DIR}/petsc && \
    tar -xf petsc.tar.gz -C ${BUILD_DIR}/petsc --strip-components=1 && \
    cd petsc && \

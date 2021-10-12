@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash -l
+set -e
 source env-build-fenics.sh
 
 source ${PREFIX}/python-venv/bin/activate
