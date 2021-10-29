@@ -11,13 +11,14 @@ mkdir -p $BUILD_DIR
 
 cd $BUILD_DIR && \
    git clone --depth 1 https://github.com/fenics/basix.git && \
-   cd basix && \
+   cd basix/cpp && \
    cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      -B build-dir -S . && \
-   cmake --build build-dir -- -j8 && \
+   cmake --build build-dir -- -j16 && \
    cmake --install build-dir && \
-   CXXFLAGS="${FLAGS}" python3 -m pip install ./python
+   cd ../python && \
+   CXXFLAGS="${FLAGS}" python3 -m pip install .
 
 python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ufl.git
 python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ffcx.git
@@ -29,7 +30,7 @@ cd $BUILD_DIR && \
    cmake -B build-dir -S . \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_BUILD_TYPE="Release" \
      -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" -DMPIEXEC_EXECUTABLE=srun && \
-   cmake --build build-dir -- -j8 && \
+   cmake --build build-dir -- -j16 && \
    cmake --install build-dir && \
    cd ../python && \
    CXXFLAGS="${FLAGS}" python3 -m pip install --ignore-installed --no-dependencies .

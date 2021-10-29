@@ -2,7 +2,7 @@
 #SBATCH --time=0-02:00:00
 #SBATCH -p batch
 #SBATCH -N 1
-#SBATCH -n 8
+#SBATCH -n 16
 set -e
 
 source env-build-fenics.sh

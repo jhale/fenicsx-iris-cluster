@@ -1,21 +1,12 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=aion-master-r14
+TAG=aion-master-r17
 export FLAGS="-O2 -march=znver2"
 
 PREFIX=${HOME}/fenicsx-${TAG}
-WORKON_HOME=${PREFIX}/virtualenv
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
 
 module purge
-
-# 2019b software set Intel MPI with GCC build
-#module load devel/CMake/3.15.3-GCCcore-8.3.0
-#module load toolchain/iimpi/2019b 
-#module load lang/flex/2.6.4-GCCcore-8.3.0
-#module load lang/Python/3.7.4-GCCcore-8.3.0
-#module load data/HDF5/1.10.5-iimpi-2019b
-#module load numlib/imkl/2019.5.281-iimpi-2019b
 
 if [[ $(hostname) =~ "iris" ]]; then
    resif-load-swset-devel

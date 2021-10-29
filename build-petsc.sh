@@ -17,7 +17,7 @@ cd ${BUILD_DIR} && \
      --CXXOPTFLAGS="${FLAGS}" \
      --FOPTFLAGS="${FLAGS}" \
      --with-cc=${MPICC} --with-cxx=${MPICXX} --with-fc=${MPIFC} \
-     --with-make-np=8 \
+     --with-make-np=16 \
      --with-mpiexec="srun" \
      --download-metis \
      --download-ptscotch \
