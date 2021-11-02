@@ -26,7 +26,7 @@ sbatch build-all.sh
 FEniCS jobs can be run in interactive mode using e.g.:
 ```
 si # Start interactive session
-source ${HOME}/fenicsx-<TAG>/env-fenics.sh
+source ${HOME}/fenicsx-<TAG>/bin/env-fenics.sh # <TAG> should be adjusted as appropriate.
 srun python3 script_name.py
 ```
 
