@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH --time=0-02:00:00
+#SBATCH --time=0-00:45:00
 #SBATCH -p batch
 #SBATCH -N 1
 #SBATCH -n 16
