@@ -7,9 +7,10 @@ source ${PREFIX}/python-venv/bin/activate
 export PETSC_DIR=${PREFIX}
 export PYBIND11_DIR=${PREFIX}
 
-mkdir -p $BUILD_DIR
+mkdir -p ${BUILD_DIR}
+cp always-use-parmetis.patch ${BUILD_DIR}
 
-cd $BUILD_DIR && \
+cd ${BUILD_DIR} && \
    git clone --depth 1 https://github.com/fenics/basix.git && \
    cd basix/cpp && \
    cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
@@ -24,9 +25,10 @@ python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ufl.git
 python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ffcx.git
 
 unset I_MPI_PMI_LIBRARY # Necessary if running in interactive session
-cd $BUILD_DIR && \
+cd ${BUILD_DIR} && \
    git clone https://github.com/fenics/dolfinx.git && \
    cd dolfinx/cpp && \
+   git am ${BUILD_DIR}/always-use-parmetis.patch && \
    cmake -B build-dir -S . \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_BUILD_TYPE="Release" \
      -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" -DMPIEXEC_EXECUTABLE=srun && \
