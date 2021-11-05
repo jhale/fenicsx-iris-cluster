@@ -1,8 +1,8 @@
 #!/bin/bash -l
-#SBATCH --time=0-00:45:00
+#SBATCH --time=0-01:00:00
 #SBATCH -p batch
 #SBATCH -N 1
-#SBATCH -n 16
+#SBATCH --ntasks-per-node 16
 set -e
 
 source env-build-fenics.sh
