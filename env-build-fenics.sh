@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=aion-master-r23
+TAG=aion-master-r23 ### Iris has Broadwell and Skylake Intel architecture; adopt your software module according to 
 export FLAGS="-O2 -march=znver2"
 export MAKEFLAGS="-j16"
 
@@ -10,7 +10,8 @@ BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
 module purge
 
 if [[ $(hostname) =~ "iris" ]]; then
-   resif-load-swset-devel
+###    resif-load-swset-devel
+    module use /opt/apps/resif/iris/2020b/broadwell/modules/all ### for example this is for Iris - Broadwell Intel architecture 
 fi
 
 # 2020b software set Intel MPI with GCC build

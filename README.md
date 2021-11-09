@@ -5,8 +5,8 @@ These scripts will automatically build the latest development version of
 [FEniCSX](http://fenicsproject.org) with PETSc and HDF5 support on the
 University of Luxembourg iris and aion clusters.
  
-To build you need to have an account on and be familiar with using the
-University of Luxembourg HPC first, see [HPC uni.lu](http://hpc.uni.lu)
+To build you need to have an account on and be familiar with using [software modules](https://hpc-docs.uni.lu/environment/modules/) the
+University of Luxembourg HPC first, see [HPC uni.lu Technical documentation](https://hpc-docs.uni.lu/getting-started/)
 
 ## Compiling instructions ##
 
