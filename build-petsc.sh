@@ -18,7 +18,7 @@ cd ${BUILD_DIR} && \
      --FOPTFLAGS="${FLAGS}" \
      --with-cc=${MPICC} --with-cxx=${MPICXX} --with-fc=${MPIFC} \
      --with-make-np=16 \
-     --with-mpiexec="srun" \
+     --with-batch=1 \
      --download-metis \
      --download-ptscotch \
      --download-parmetis \

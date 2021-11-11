@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=meluxina-master-r23
+TAG=meluxina-master-r24
 export FLAGS="-O2 -march=znver2"
 export MAKEFLAGS="-j16"
 
@@ -34,6 +34,7 @@ fi
 
 # 2021a software set Intel MPI with GCC build
 module load impi/2021.4.0-intel-compilers-2021.4.0
+# No HDF5 available for Intel MPI...
 
 module load CMake/3.20.1-GCCcore-10.3.0
 module load flex/2.6.4-GCCcore-10.3.0
