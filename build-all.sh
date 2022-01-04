@@ -6,6 +6,7 @@ set -e
 
 source env-build-fenics.sh
 
+touch ${PREFIX}/.git_describe
 echo "$(git remote get-url origin) $(git describe --always --tags --dirty)" >> ${PREFIX}/.git_describe
 
 ./build-hdf5.sh
