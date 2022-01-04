@@ -6,6 +6,8 @@ set -e
 
 source env-build-fenics.sh
 
+echo "$(git remote get-url origin) $(git describe --tags --dirty)" >> ${PREFIX}/.git_describe
+
 ./build-hdf5.sh
 ./build-petsc.sh
 ./build-python-modules.sh
