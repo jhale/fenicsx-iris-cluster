@@ -6,13 +6,13 @@ set -e
 
 source env-build-fenics.sh
 
-touch ${PREFIX}/.git_describe
-echo "$(git remote get-url origin) $(git describe --always --tags --dirty)" >> ${PREFIX}/.git_describe
-
 ./build-hdf5.sh
 ./build-petsc.sh
 ./build-python-modules.sh
 ./build-fenics.sh
+
+touch ${PREFIX}/.git_describe
+echo "$(git remote get-url origin) $(git describe --always --tags --dirty)" >> ${PREFIX}/.git_describe
 
 mkdir -p ${PREFIX}/bin
 cp env-build-fenics.sh ${PREFIX}/bin/env-build-fenics.sh
