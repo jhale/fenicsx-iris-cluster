@@ -12,7 +12,7 @@ source env-build-fenics.sh
 ./build-fenics.sh
 
 touch ${PREFIX}/.git_describe
-echo "$(git remote get-url origin) $(git describe --always --tags --dirty)" >> ${PREFIX}/.git_describe
+echo "$(git remote get-url origin) $(git describe --always --tags --dirty)" >> ${PREFIX}/.git-describe
 
 mkdir -p ${PREFIX}/bin
 cp env-build-fenics.sh ${PREFIX}/bin/env-build-fenics.sh
