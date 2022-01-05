@@ -20,7 +20,7 @@ cd ${BUILD_DIR} && \
    cmake --build build-dir && \
    cmake --install build-dir && \
    cd ../python && \
-   CXXFLAGS="${FLAGS}" python3 -m pip install .
+   CXXFLAGS="${FLAGS}" python3 -m pip install --no-dependencies .
 
 cd ${BUILD_DIR} && \
    git clone --depth 1 https://github.com/FEniCS/ufl.git && \
