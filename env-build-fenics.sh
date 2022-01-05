@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=meluxina-master-r25
+TAG=meluxina-master-r26
 export FLAGS="-O2 -march=znver2"
 export MAKEFLAGS="-j16"
 

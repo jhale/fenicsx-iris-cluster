@@ -15,7 +15,7 @@ cd ${BUILD_DIR} && \
    echo "$(git remote get-url origin) $(git describe --always --tags --dirty)" >> ${PREFIX}/.git-describe && \
    cd cpp && \
    cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
-     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+     -DCMAKE_INSTALL_PREFIX=${PREFIX} -DDOWNLOAD_XTENSOR_LIBS=ON \
      -B build-dir -S . && \
    cmake --build build-dir && \
    cmake --install build-dir && \
