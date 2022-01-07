@@ -42,7 +42,7 @@ cd ${BUILD_DIR} && \
    cd cpp && \
    cmake -B build-dir -S . \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_BUILD_TYPE="Release" \
-     -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" -DMPIEXEC_EXECUTABLE=srun && \
+     -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" -DMPIEXEC_EXECUTABLE=mpiexec && \
    cmake --build build-dir && \
    cmake --install build-dir && \
    cd ../python && \

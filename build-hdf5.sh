@@ -12,6 +12,6 @@ cd ${BUILD_DIR} && \
     mkdir -p ${BUILD_DIR}/hdf5 && \
     tar -xf hdf5.tar.gz -C ${BUILD_DIR}/hdf5 --strip-components=1 && \
     cd hdf5 && \
-    ./configure --prefix=${PREFIX} --enable-parallel --enable-shared --enable-static=no && \
+    CC=${MPICC} ./configure --prefix=${PREFIX} --enable-parallel --enable-shared --enable-static=no && \
     make -j16 install
  

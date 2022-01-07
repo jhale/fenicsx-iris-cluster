@@ -34,8 +34,10 @@ fi
 
 # 2021a software set Intel MPI with GCC build
 #module load impi/2021.4.0-intel-compilers-2021.4.0
-module load ParaStationMPI/5.4.11-1-GCC-10.3.0-CUDA-11.3.1
+#module load ParaStationMPI/5.4.11-1-GCC-10.3.0-CUDA-11.3.1
 # No HDF5 available for Intel MPI...
+module load gompi/2021a
+module load HDF5/1.12.1-gompi-2021a
 
 module load CMake/3.20.1-GCCcore-10.3.0
 module load flex/2.6.4-GCCcore-10.3.0
