@@ -4,7 +4,7 @@ TAG=meluxina-master-r30
 export FLAGS="-O2 -march=znver2"
 export MAKEFLAGS="-j16"
 
-PREFIX=${HOME}/fenicsx-${TAG}
+PREFIX=/project/scratch/p200015/fenicsx-${TAG}
 BUILD_DIR=/tmp/${USER}/fenicsx-${TAG}
 
 module purge

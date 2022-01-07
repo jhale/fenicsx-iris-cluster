@@ -36,7 +36,7 @@ cd ${BUILD_DIR} && \
 
 unset I_MPI_PMI_LIBRARY # Necessary if running in interactive session
 cd ${BUILD_DIR} && \
-   git clone --depth 1 -b chris/python-no-scotch https://github.com/fenics/dolfinx.git && \
+   git clone --depth 1 https://github.com/fenics/dolfinx.git && \
    cd dolfinx && \
    echo "$(git remote get-url origin) $(git describe --always --tags --dirty)" >> ${PREFIX}/.git-describe && \
    cd cpp && \
