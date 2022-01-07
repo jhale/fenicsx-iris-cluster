@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=meluxina-master-r26
+TAG=meluxina-master-r27
 export FLAGS="-O2 -march=znver2"
 export MAKEFLAGS="-j16"
 
@@ -33,7 +33,8 @@ fi
 # Meluxina
 
 # 2021a software set Intel MPI with GCC build
-module load impi/2021.4.0-intel-compilers-2021.4.0
+#module load impi/2021.4.0-intel-compilers-2021.4.0
+module load ParaStationMPI/5.4.11-1-GCC-10.3.0-CUDA-11.3.1
 # No HDF5 available for Intel MPI...
 
 module load CMake/3.20.1-GCCcore-10.3.0
@@ -48,15 +49,15 @@ export CC=gcc
 export CXX=g++
 export FC=gfortran
 
-# 2020b software set OpenMPI with GCC
-#export MPICC=mpicc
-#export MPICXX=mpicxx
-#export MPIFC=mpif90
+# 2020b software set OpenMPI or Parastation with GCC
+export MPICC=mpicc
+export MPICXX=mpicxx
+export MPIFC=mpif90
 
 # 2020b software set Intel MPI with GCC
-export MPICC=mpigcc
-export MPICXX=mpigxx
-export MPIFC=mpif90
+#export MPICC=mpigcc
+#export MPICXX=mpigxx
+#export MPIFC=mpif90
 
 export PATH=${PREFIX}/bin:${PATH}
 export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}
