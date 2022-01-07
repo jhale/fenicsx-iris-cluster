@@ -36,13 +36,12 @@ cd ${BUILD_DIR} && \
 
 unset I_MPI_PMI_LIBRARY # Necessary if running in interactive session
 cd ${BUILD_DIR} && \
-   git clone https://github.com/fenics/dolfinx.git && \
+   git clone --depth 1 -b chris/python-no-scotch https://github.com/fenics/dolfinx.git && \
    cd dolfinx && \
    echo "$(git remote get-url origin) $(git describe --always --tags --dirty)" >> ${PREFIX}/.git-describe && \
    cd cpp && \
    cmake -B build-dir -S . \
-     -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_BUILD_TYPE="Release" \
-     -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" -DMPIEXEC_EXECUTABLE=mpiexec && \
+     -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" -DDOLFINX_SKIP_BUILD_TESTS=ON && \
    cmake --build build-dir && \
    cmake --install build-dir && \
    cd ../python && \

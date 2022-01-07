@@ -20,7 +20,6 @@ cd ${BUILD_DIR} && \
      --with-make-np=16 \
      --with-batch=1 \
      --download-metis \
-     --download-ptscotch \
      --download-parmetis \
      --download-suitesparse \
      --download-scalapack \
