@@ -12,7 +12,7 @@ cd ${BUILD_DIR} && \
    mkdir -p ${BUILD_DIR}/xtl && \
    tar -xf xtl.tar.gz -C ${BUILD_DIR}/xtensor --strip-components=1 && \
    cd xtensor && \
-   cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
+   cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      -B build-dir -S . && \
    cmake --build build-dir && \
@@ -23,7 +23,7 @@ cd ${BUILD_DIR} && \
    mkdir -p ${BUILD_DIR}/xtensor && \
    tar -xf xtensor.tar.gz -C ${BUILD_DIR}/xtensor --strip-components=1 && \
    cd xtensor && \
-   cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
+   cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      -B build-dir -S . && \
    cmake --build build-dir && \

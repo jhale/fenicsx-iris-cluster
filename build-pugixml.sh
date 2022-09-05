@@ -11,7 +11,7 @@ cd ${BUILD_DIR} && \
    mkdir -p ${BUILD_DIR}/pugixml && \
    tar -xf pugixml.tar.gz -C ${BUILD_DIR}/pugixml --strip-components=1 && \
    cd pugixml && \
-   cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
+   cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      -DPUGIXML_BUILD_SHARED_AND_STATIC_LIBS=OFF \
      -DBUILD_SHARED_LIBS=ON \

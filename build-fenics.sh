@@ -12,7 +12,7 @@ mkdir -p ${BUILD_DIR}
 cd ${BUILD_DIR} && \
    git clone --depth 1 https://github.com/fenics/basix.git && \
    cd basix/cpp && \
-   cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
+   cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} \
      -B build-dir -S . && \
    cmake --build build-dir && \
@@ -27,7 +27,7 @@ unset I_MPI_PMI_LIBRARY # Necessary if running in interactive session
 cd ${BUILD_DIR} && \
    git clone https://github.com/fenics/dolfinx.git && \
    cd dolfinx/cpp && \
-   cmake -B build-dir -S . \
+   cmake -G Ninja -B build-dir -S . \
      -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_BUILD_TYPE="Release" \
      -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" -DMPIEXEC_EXECUTABLE=srun && \
    cmake --build build-dir && \
