@@ -2,7 +2,7 @@
 set -e
 source env-build-fenics.sh
 
-VERSION="3.16.1"
+VERSION="3.17.4"
 
 mkdir -p $BUILD_DIR
 
@@ -20,7 +20,6 @@ cd ${BUILD_DIR} && \
      --with-make-np=16 \
      --with-mpiexec="srun" \
      --download-metis \
-     --download-ptscotch \
      --download-parmetis \
      --download-suitesparse \
      --download-scalapack \

@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=aion-master-r23
+TAG=aion-master-r24
 export FLAGS="-O2 -march=znver2"
 export MAKEFLAGS="-j16"
 
