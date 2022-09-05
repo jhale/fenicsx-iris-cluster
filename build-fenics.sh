@@ -20,8 +20,8 @@ cd ${BUILD_DIR} && \
    cd ../python && \
    CXXFLAGS="${FLAGS}" python3 -m pip install .
 
-python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ufl.git
-python3 -m pip install --no-cache-dir git+https://github.com/FEniCS/ffcx.git
+python3 -m pip install -v --no-cache-dir git+https://github.com/FEniCS/ufl.git
+python3 -m pip install -v --no-cache-dir git+https://github.com/FEniCS/ffcx.git
 
 unset I_MPI_PMI_LIBRARY # Necessary if running in interactive session
 cd ${BUILD_DIR} && \
@@ -33,4 +33,4 @@ cd ${BUILD_DIR} && \
    cmake --build build-dir && \
    cmake --install build-dir && \
    cd ../python && \
-   CXXFLAGS="${FLAGS}" python3 -m pip install --ignore-installed --no-dependencies .
+   CXXFLAGS="${FLAGS}" python3 -m pip -v install --ignore-installed --no-dependencies --no-cache-dir .
