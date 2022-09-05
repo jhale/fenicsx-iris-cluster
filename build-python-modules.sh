@@ -7,7 +7,7 @@ export SLEPC_DIR=${PREFIX}
 
 PETSC4PY_VERSION=3.17.4
 
-python3 -m venv ${PREFIX}/python-venv
+python3 -m venv ${PREFIX}/python-venv --prompt ${TAG}
 source ${PREFIX}/python-venv/bin/activate
 python3 -m pip install -v wheel 
 

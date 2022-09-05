@@ -8,9 +8,9 @@ set -e
 source env-build-fenics.sh
 
 ./build-petsc.sh
+./build-python-modules.sh
 ./build-xtensor.sh
 ./build-pugixml.sh
-./build-python-modules.sh
 ./build-fenics.sh
 
 mkdir -p ${PREFIX}/bin
