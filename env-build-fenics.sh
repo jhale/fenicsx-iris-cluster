@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=fenicsx-aion-master-r26
+TAG=fenicsx-aion-0.5.1
 export FLAGS="-O2 -march=znver2"
 export MAKEFLAGS="-j16"
 
@@ -8,10 +8,6 @@ PREFIX=${HOME}/${TAG}
 BUILD_DIR=/tmp/${USER}/${TAG}
 
 module purge
-
-if [[ $(hostname) =~ "iris" ]]; then
-   resif-load-swset-devel
-fi
 
 # 2020b software set Intel MPI with GCC build
 module load toolchain/iimpi/2020b
