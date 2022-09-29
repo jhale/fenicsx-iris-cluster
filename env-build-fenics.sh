@@ -1,10 +1,10 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=fenicsx-aion-0.5.1
-export FLAGS="-O2 -march=znver2"
+TAG=fenicsx-aion-intel-0.5.1
+export FLAGS="-O3 -march=znver2"
 export MAKEFLAGS="-j16"
 
-PREFIX=${HOME}/${TAG}
+PREFIX=${SCRATCH}/${TAG}
 BUILD_DIR=/tmp/${USER}/${TAG}
 
 module purge
