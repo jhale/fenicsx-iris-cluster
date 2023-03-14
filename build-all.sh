@@ -8,6 +8,7 @@ set -e
 source env-build-fenics.sh
 
 ./build-cmake.sh
+./build-adios2.sh
 ./build-petsc.sh
 ./build-python-modules.sh
 ./build-pugixml.sh
