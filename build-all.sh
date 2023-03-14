@@ -9,7 +9,6 @@ source env-build-fenics.sh
 
 ./build-petsc.sh
 ./build-python-modules.sh
-./build-xtensor.sh
 ./build-pugixml.sh
 ./build-fenics.sh
 

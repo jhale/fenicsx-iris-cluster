@@ -5,7 +5,7 @@ source env-build-fenics.sh
 export PETSC_DIR=${PREFIX}
 export SLEPC_DIR=${PREFIX}
 
-PETSC4PY_VERSION=3.17.4
+PETSC4PY_VERSION=3.18.5
 
 python3 -m venv ${PREFIX}/python-venv --prompt ${TAG}
 source ${PREFIX}/python-venv/bin/activate

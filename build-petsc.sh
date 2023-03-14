@@ -2,7 +2,7 @@
 set -e
 source env-build-fenics.sh
 
-VERSION="3.17.4"
+VERSION="3.18.5"
 
 mkdir -p $BUILD_DIR
 
@@ -21,14 +21,11 @@ cd ${BUILD_DIR} && \
      --with-mpiexec="srun" \
      --download-metis \
      --download-parmetis \
-     --download-suitesparse \
      --download-scalapack \
      --download-hypre \
      --download-mumps \
-     --download-ml \
-     --download-superlu \
-     --download-superlu_dist \
      --with-scalar-type=real \
+     --with-64-bit-indices \
      --with-debugging=0 \
      --with-shared-libraries \
      --with-fortran-bindings=no \

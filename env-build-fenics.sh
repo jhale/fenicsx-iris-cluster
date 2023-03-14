@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=fenicsx-aion-intel-0.5.1
+TAG=fenicsx-aion-intel-64-0.6.0
 export FLAGS="-O3 -march=znver2"
 export MAKEFLAGS="-j16"
 
