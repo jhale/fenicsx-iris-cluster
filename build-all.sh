@@ -1,6 +1,8 @@
 #!/bin/bash -l
 #SBATCH --time=0-01:00:00
-#SBATCH -p batch
+#SBATCH --partition cpu
+#SBATCH --qos default
+#SBATCH -A p200165
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 16
 set -e
