@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=fenicsx-meluxina-0.6.0-r2
+TAG=fenicsx-meluxina-main-240523
 export FLAGS="-O3 -march=znver2"
 export MAKEFLAGS="-j16"
 
