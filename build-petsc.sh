@@ -2,14 +2,13 @@
 set -e
 source env-build-fenics.sh
 
-VERSION="3.18.5"
+VERSION="3.20.0"
 
 mkdir -p $BUILD_DIR
 
 cd ${BUILD_DIR} && \
-   wget --no-check-certificate --read-timeout=10 -nc http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-${VERSION}.tar.gz -O petsc.tar.gz && \
+   git clone -b v3.20.0 https://gitlab.com/petsc/petsc.git petsc && \
    mkdir -p ${BUILD_DIR}/petsc && \
-   tar -xf petsc.tar.gz -C ${BUILD_DIR}/petsc --strip-components=1 && \
    cd petsc && \
    python3 ./configure \
      --with-blaslapack-dir=${EBROOTOPENBLAS}/lib \
@@ -25,10 +24,10 @@ cd ${BUILD_DIR} && \
      --download-hypre \
      --download-mumps \
      --with-scalar-type=real \
-     --with-64-bit-indices \
      --with-debugging=0 \
      --with-shared-libraries \
      --with-fortran-bindings=no \
+     --with-64-bit-indices=no \
      --prefix=${PREFIX} && \
     make && \
     make install
