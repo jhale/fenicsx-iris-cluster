@@ -1,7 +1,7 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=fenicsx-iris-intel-32-0.7.0
-export FLAGS="-O3 -march=broadwell"
+TAG=fenicsx-aion-gompi-32-0.7.0-r1
+export FLAGS="-O3 -march=znver2"
 export MAKEFLAGS="-j16"
 
 PREFIX=${SCRATCH}/${TAG}
@@ -13,16 +13,16 @@ module purge
 #module load toolchain/iimpi
 
 # 2020b software set OpenMPI with GCC build
-module load toolchain/gompi
-module load data/HDF5
+module load toolchain/gompi/2020b
+module load data/HDF5/1.10.7-gompi-2020b
 
-module load devel/CMake
-module load lang/flex
-module load lang/Python
-module load numlib/OpenBLAS
-module load devel/Boost
-module load lang/Bison
-module load tools/Ninja
+module load devel/CMake/3.18.4-GCCcore-10.2.0
+module load lang/flex/2.6.4-GCCcore-10.2.0
+module load lang/Python/3.8.6-GCCcore-10.2.0
+module load numlib/OpenBLAS/0.3.12-GCC-10.2.0
+module load devel/Boost/1.74.0-GCC-10.2.0
+module load lang/Bison/3.7.1-GCCcore-10.2.0
+module load tools/Ninja/1.10.1-GCCcore-10.2.0
 
 # Use GCC for non-MPI builds.
 export CC=gcc
