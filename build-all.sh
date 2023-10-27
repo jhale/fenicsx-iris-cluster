@@ -13,6 +13,7 @@ source env-build-fenics.sh
 ./build-python-modules.sh
 ./build-pugixml.sh
 ./build-fenics.sh
+./build-gmsh.sh
 
 mkdir -p ${PREFIX}/bin
 cp env-build-fenics.sh ${PREFIX}/bin/env-build-fenics.sh
