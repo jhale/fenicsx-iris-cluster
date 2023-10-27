@@ -5,4 +5,4 @@
 source $HOME/fenicsx-master-r12/bin/env-fenics.sh
 cd $SLURM_SUBMIT_DIR
 echo $@
-srun -c 1 --mpi=pmix "$@"
+srun -c 1 "$@"

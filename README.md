@@ -47,7 +47,6 @@ $ sbatch -n 4 fenics-launcher.sh python3 poisson.py
 
 ## Additional notes
 
-- Intel MPI appears to be the best performing MPI implementation on both iris and aion.
 - The `PREFIX` environment variable should point to a folder on `${SCRATCH}`.
 - The FEniCS JIT cache should also be placed on `${SCRATCH}` by creating a file
   `~/.config/dolfinx/dolfinx_jit_parameters.json` containing:
@@ -56,8 +55,6 @@ $ sbatch -n 4 fenics-launcher.sh python3 poisson.py
      {"cache_dir": "/scratch/users/jhale/fenicsx_cache"}     
      ```
 
-- On aion, the pmix launcher seems to provide the best performance ``srun --mpi=pmix``.
-- On iris, the pmi2 launcher seems to provide the best performance ``srun --mpi=pmi2``.
 - It is worth experimenting with the JIT C compiler flags particularly for
   higher-order polynomial kernels, e.g. for aion `-march=znver2 -O3`.
 
