@@ -1,8 +1,8 @@
 # fenicsx-iris-cluster #
-### Scripts to build FEniCSX on the University of Luxembourg iris and aion clusters ###
+### Scripts to build FEniCSx on the University of Luxembourg iris and aion clusters ###
 
 These scripts will automatically build the latest development version of
-[FEniCSX](http://fenicsproject.org) with PETSc and HDF5 support on the
+[FEniCSx](http://fenicsproject.org) with PETSc and HDF5 support on the
 University of Luxembourg iris and aion clusters.
  
 To build you need to have an account on and be familiar with using the
@@ -17,8 +17,8 @@ git clone https://github.com/jhale/fenicsx-iris-cluster.git
 cd fenicsx-iris-cluster
 ```
 
-Adjust the `TAG` and `FLAGS` in `./fenicsx-iris-cluster/env-build-fenics.sh` appropriately and
-then build FEniCSx:
+Adjust the `TAG` and `FLAGS` in `./fenicsx-iris-cluster/env-build-fenics.sh`
+appropriately and then build FEniCSx:
 ```
 sbatch build-all.sh
 ```
@@ -32,7 +32,8 @@ srun python3 script_name.py
 
 ## Warnings ##
 
-aion and iris have different OS and architecture so be careful with the FFCx cache.
+aion and iris have different OS and architecture so be careful with the FFCx
+cache and the `FLAGS` variable in `env-build-fenics.sh`.
 
 ## Running FEniCS MPI jobs
 
