@@ -2,12 +2,12 @@
 set -e
 source env-build-fenics.sh
 
-VERSION="3.20.0"
+VERSION="3.20.2"
 
 mkdir -p $BUILD_DIR
 
 cd ${BUILD_DIR} && \
-   git clone -b v3.20.0 https://gitlab.com/petsc/petsc.git petsc && \
+   git clone -b ${VERSION} https://gitlab.com/petsc/petsc.git petsc && \
    mkdir -p ${BUILD_DIR}/petsc && \
    cd petsc && \
    python3 ./configure \

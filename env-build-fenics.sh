@@ -1,7 +1,12 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=fenicsx-aion-gompi-32-0.7.0-r1
+TAG=fenicsx-aion-gompi-32-0.7.2
+# aion cluster
 export FLAGS="-O3 -march=znver2"
+# iris cluster (all nodes compatible)
+#export FLAGS="-O3 -march=broadwell"
+# iris cluster (skylake part only)
+#export FLAGS="-O3 -march=skylake"
 export MAKEFLAGS="-j16"
 
 PREFIX=${SCRATCH}/${TAG}
