@@ -9,17 +9,7 @@ export PYBIND11_DIR=${PREFIX}
 
 mkdir -p ${BUILD_DIR}
 
-cd ${BUILD_DIR} && \
-   git clone -b main --single-branch --depth 1 https://github.com/fenics/basix.git && \
-   cd basix/cpp && \
-   cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" -DCMAKE_CXX_FLAGS_RELEASE="${FLAGS}" \
-     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-     -B build-dir -S . && \
-   cmake --build build-dir && \
-   cmake --install build-dir && \
-   cd ../python && \
-   CXXFLAGS="${FLAGS}" python3 -m pip install .
-
+python3 -m pip install -v --no-cache-dir git+https://github.com/FEniCS/basix.git@main
 python3 -m pip install -v --no-cache-dir git+https://github.com/FEniCS/ufl.git@main
 python3 -m pip install -v --no-cache-dir git+https://github.com/FEniCS/ffcx.git@main
 
