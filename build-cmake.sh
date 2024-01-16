@@ -2,7 +2,7 @@
 set -e
 source env-build-fenics.sh
 
-VERSION="3.25.3"
+VERSION="3.28.1"
 
 mkdir -p $BUILD_DIR
 
