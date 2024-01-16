@@ -9,7 +9,7 @@ export PYBIND11_DIR=${PREFIX}
 
 mkdir -p ${BUILD_DIR}
 
-python3 -m pip install -v --no-cache-dir git+https://github.com/FEniCS/basix.git@main
+python3 -m pip install -v --no-cache-dir --config-settings=cmake.minimum-version="3.26.1" git+https://github.com/FEniCS/basix.git@main
 python3 -m pip install -v --no-cache-dir git+https://github.com/FEniCS/ufl.git@main
 python3 -m pip install -v --no-cache-dir git+https://github.com/FEniCS/ffcx.git@main
 
@@ -24,4 +24,4 @@ cd ${BUILD_DIR} && \
    cmake --install build-dir && \
    cd ../python && \
    python3 -m pip -v install -r build-requirements.txt && \
-   CXXFLAGS="${FLAGS}" python3 -m pip -v install --ignore-installed --no-dependencies --no-cache-dir --no-build-isolation --check-build-dependencies .
+   CXXFLAGS="${FLAGS}" python3 -m pip -v install --config-settings=cmake.minimum-version="3.26.1" --ignore-installed --no-dependencies --no-cache-dir --no-build-isolation --check-build-dependencies .
