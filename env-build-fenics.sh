@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=fenicsx-iris-gompi-32-20230116-r1
+TAG=fenicsx-iris-gompi-32-20230116-r2
 # aion cluster
 #export FLAGS="-O3 -march=znver2"
 # iris cluster (all nodes compatible)
