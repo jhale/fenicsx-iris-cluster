@@ -1,10 +1,10 @@
 #!/bin/bash -l
 # User should set TAG and FLAGS appropriately
-TAG=fenicsx-aion-gompi-32-0.7.2
+TAG=fenicsx-iris-gompi-32-20230116
 # aion cluster
-export FLAGS="-O3 -march=znver2"
+#export FLAGS="-O3 -march=znver2"
 # iris cluster (all nodes compatible)
-#export FLAGS="-O3 -march=broadwell"
+export FLAGS="-O3 -march=broadwell"
 # iris cluster (skylake part only)
 #export FLAGS="-O3 -march=skylake"
 export MAKEFLAGS="-j16"
