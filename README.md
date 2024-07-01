@@ -1,6 +1,15 @@
 # fenicsx-iris-cluster #
 ### Scripts to build FEniCSx on the University of Luxembourg iris and aion clusters ###
 
+## Warning
+
+These scripts no longer work because the uni.lu provided compiler
+(GCC 10.2.0) cannot compile the latest C++ featurs used in DOLFINx.
+Please use Spack and the provided notes
+[here](https://gist.github.com/jhale/23d4d7646e2dc05d0adc0395767d044a).
+
+## Introduction
+
 These scripts will automatically build the latest development version of
 [FEniCSx](http://fenicsproject.org) with PETSc and HDF5 support on the
 University of Luxembourg iris and aion clusters.
